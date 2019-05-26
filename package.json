@@ -2,6 +2,7 @@
 	"name": "tab-out-or-reindent",
 	"displayName": "Tab Out or Reindent",
 	"description": "Tab jump out pair or reindent selection.",
+	"publisher": "yeannylam",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.34.0"
