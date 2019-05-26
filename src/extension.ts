@@ -34,7 +34,14 @@ export function activate(context: ExtensionContext) {
               // this is working around with reindent lines bug of vscode
               // remove all wrongly created selections
               editor.selections = editor.selections.map((sel) => {
-                return new Selection(sel.active, sel.active);
+                const index = editor.document.lineAt(sel.active)
+                  .firstNonWhitespaceCharacterIndex;
+                if (index > sel.active.character) {
+                  const pos = new Position(sel.active.line, index);
+                  return new Selection(pos, pos);
+                } else {
+                  return new Selection(sel.active, sel.active);
+                }
               });
             });
         } else {
