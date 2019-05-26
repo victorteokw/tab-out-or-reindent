@@ -1,14 +1,12 @@
 import {
-  window, commands, ExtensionContext, Range, Selection, Position
+  commands, ExtensionContext, Range, Selection, Position, TextEditor
 } from 'vscode';
 
 export function activate(context: ExtensionContext) {
 
   let disposable = commands.registerTextEditorCommand(
-    'extension.tabOutOrReindent',
-    () => {
-      const editor = window.activeTextEditor;
-      if (!editor) return;
+    'tabOutOrReindent',
+    (editor: TextEditor) => {
       let selCount = 0, thingAtPoint = [];
       for (const sel of editor.selections) {
         const next = new Position(sel.active.line, sel.active.character + 1);

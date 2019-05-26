@@ -15,13 +15,13 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.tabOutOrReindent"
+		"onCommand:tabOutOrReindent"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.tabOutOrReindent",
+				"command": "tabOutOrReindent",
 				"title": "Tab Out or Reindent"
 			}
 		]
